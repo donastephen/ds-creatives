@@ -1,0 +1,18 @@
+1) Creating copy of object using clone
+2) Class constants, which can be accessed using :: from other classes
+3) Static methods and variables,  can be accessed from other classes using ::
+4) Visibility of class methods and properties using private, public an protected
+5) creating constructs using __construct and __destruct , earlier constructors where with same name as class name
+6) Abstract classes- classes used as a model to define other classes.
+	If a certain class contains abstract method, it must be defined as abstract.
+7) Interfaces - which can help you design an API.
+   All methods which are defined in an interface must be public and must be implemented
+   In a class you can implement any number of interfaces.
+8) Magic Methods - methods starting with __ and those are defined to provide additional functionality to classes.
+   eg: __set,__get,__toString, __call
+9) Finality - final methods cannot be implemented again and final classes to prevent it from having a children (you cannot extend it)
+
+10) __autoload - helps in avoiding includes in the top of files and loads the file when PHP encounters undefined yet class
+
+11) Type Hinting - u can specify which type of argument is expected as function argument it works only for objects and arrays not strings and integers
+12) Exceptions - The exceptions are basically just objects. When an error occurs you can use an exception in its place. This way, when an exception is used, the rest of the following PHP code will not be executed
