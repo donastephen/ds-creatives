@@ -1,0 +1,3 @@
+Mysql table types:
+my_isam - good for tables with more reads than rights
+innodb - supports transactions with roll_back
