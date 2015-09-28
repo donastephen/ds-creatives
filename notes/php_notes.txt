@@ -16,3 +16,7 @@
 
 11) Type Hinting - u can specify which type of argument is expected as function argument it works only for objects and arrays not strings and integers
 12) Exceptions - The exceptions are basically just objects. When an error occurs you can use an exception in its place. This way, when an exception is used, the rest of the following PHP code will not be executed
+
+__call - gets called when invoking inaccessible methods in object context . Like accessing a method which is not even defined
+        eg: __call($name, $arguments)  , $name - nam eof method and argument- argument the method is called with
+__callStatic - gets called when invoking an inaccessible static method in

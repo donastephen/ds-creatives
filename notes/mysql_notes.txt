@@ -1,3 +1,24 @@
 Mysql table types:
 my_isam - good for tables with more reads than rights
 innodb - supports transactions with roll_back
+
+login
+mysql -u root -p
+service mysql status:start:stop
+show databases
+switch to a db: use dbname
+show tables
+describe table_name
+drop table table_name
+
+Indexes are the quick references for fast data retrieval of data from a database. There are two different kinds of indexes.
+
+Clustered Index-
+Only one per table
+Faster to read than non clustered as data is physically stored in index order.
+primary key
+Non­clustered Index-
+Can be used many times per table.
+Quicker for insert and update operations than a clustered index.
+unique key
+
