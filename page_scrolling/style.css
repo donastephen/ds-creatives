@@ -1,0 +1,35 @@
+.container{
+	margin: 30px 30px;
+	padding: 20px;
+	width: 90%;	
+	background-color:#F8F8F8;
+}
+article{
+	padding:10px;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size: 15px;
+	line-height: 25px;
+}
+img{
+	margin:5px;
+	padding:10px;
+}
+.scroll_val{
+	background: black;
+	color:white;
+	width:40px;
+	height:30px;
+	position: fixed;
+  	right: 0;
+	text-align: center;
+}
+.offset-val{
+	background: black;
+	color:white;
+	width:40px;
+	height:30px;
+	position: fixed;
+  	left: 0;
+  	top:30px;
+	text-align: center;
+}

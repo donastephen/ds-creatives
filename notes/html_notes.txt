@@ -1,0 +1,19 @@
+For HTML4:
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+
+For HTML5:
+<meta charset="UTF-8">
+
+A web address, like http://www.w3schools.com/html/default.asp follows these syntax rules:
+
+scheme://host.domain:port/path/filename
+Explanation:
+
+scheme - defines the type of Internet service (most common is http)
+host - defines the domain host (default host for http is www)
+domain - defines the Internet domain name (w3schools.com)
+port - defines the port number at the host (default for http is 80)
+path - defines a path at the server (If omitted: the root directory of the site)
+filename - defines the name of a document or resource
+
+Scheme: http,https,ftp,file- file in the server or computer

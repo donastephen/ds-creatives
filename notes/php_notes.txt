@@ -20,3 +20,10 @@
 __call - gets called when invoking inaccessible methods in object context . Like accessing a method which is not even defined
         eg: __call($name, $arguments)  , $name - nam eof method and argument- argument the method is called with
 __callStatic - gets called when invoking an inaccessible static method in
+
+
+WEB SERVICE
+Web services are way to access some data from server system by client system . They are machine independent, language independent.
+For SOAP client requires WSDL from server or UDDI(Universal  Description discovery and Integration) to access the function
+In case of REST client and server can communicate with URI
+Both use HTTP as a medium of communication. REST uses HTTP methods GET,POST,PUT and DELETE.
