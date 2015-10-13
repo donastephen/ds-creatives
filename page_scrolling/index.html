@@ -8,25 +8,46 @@
 
 		<script>
 		$(document).ready( function(){
+			var windowScrollTop;
+			var windowHeight;
+
 			$(".image1").css("opacity",0);
-			$(window).scroll( function(){
+			$(".image2").css("opacity",0);
 
-				$.fn.revealOnScroll = function(){
-
-				};
-				var windowScrollTop = $(window).scrollTop();
-				var windowHeight = $(window).height();
-				
-				var objectOffset = $('.image1').offset();
+			$.fn.revealOnScroll = function(){
+				var objectOffset = $(this).offset();
 				var objectOffsetTop = objectOffset.top;
-				$('.offset-val').html(objectOffsetTop);
-				var windowOffset = windowScrollTop+windowHeight;
-				$('.scroll_val').html(windowOffset);
-				if(!$(".image1").hasClass("animation-complete")){
-					if(windowOffset>objectOffsetTop){
-						$(".image1").animate({"opacity":1},3000).addClass("animation-complete");
+				//return function(){
+					$('.offset-val').html(objectOffsetTop);
+					
+					var windowOffset = windowScrollTop+windowHeight;
+					$('.scroll_val').html(windowOffset);
+
+					if(!$(this).hasClass("animation-complete")){
+						if(windowOffset>objectOffsetTop){
+							$(this).animate({"opacity":1},3000).addClass("animation-complete");
+						}
 					}
-				}
+				//}
+
+			};
+
+			$(window).scroll( function(){
+				windowScrollTop = $(window).scrollTop();
+				windowHeight = $(window).height();
+				$(".image1").revealOnScroll();
+				$(".image2").revealOnScroll();
+				// var objectOffset = $('.image1').offset();
+				// var objectOffsetTop = objectOffset.top;
+				// $('.offset-val').html(objectOffsetTop);
+
+				// var windowOffset = windowScrollTop+windowHeight;
+				// $('.scroll_val').html(windowOffset);
+				// if(!$(".image1").hasClass("animation-complete")){
+				// 	if(windowOffset>objectOffsetTop){
+				// 		$(".image1").animate({"opacity":1},3000).addClass("animation-complete");
+				// 	}
+				// }
 
 			});
 
