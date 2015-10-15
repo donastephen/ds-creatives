@@ -22,3 +22,9 @@ Can be used many times per table.
 Quicker for insert and update operations than a clustered index.
 unique key
 
+
+Explain select count(*) as num_votes,candidate.name from vote join candidate on vote.candidate_id=candidate.id group by candidate.id order by num_votes desc limit 1,1
+
+
+
+
