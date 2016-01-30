@@ -1,0 +1,100 @@
+
+Hoisting
+Hoisting is JavaScript's default behavior of moving all declarations including function declarations to the top of the current scope (to the top of the current script or the current function).
+JavaScript only hoists declarations, not initializations.
+It is done by lexical parser of compiler that sets memory for program execution.
+Next is execution context and in it all lines of ocde gets executed line by line synchronously.
+In this execution context  a global env(global object), this and outer env gets creates
+global env and this is window object when running javascript in browser.
+
+Asynchoronous call or code that triggers some event , these codes sits in the queue and executs after javascript deals with all other tasks in the stack
+
+
+"use strict"; 
+With strict mode, you can not, for example, use undeclared variables.
+
+
+
+Notes:
+Variable and function names written as camelCase
+Global variable written in UPPERCASE
+Constants (like PI) written in UPPERCASE
+Should you use hyp-hens, camelCase, or under_scores in variable names?
+Hyphens in HTML and CSS:
+Hyphens can be mistaken as subtraction attempts. Hyphens are not allowed in JavaScript names.
+Use Lower Case File Names
+
+Use {} instead of new Object()
+Use "" instead of new String()
+Use 0 instead of new Number()
+Use false instead of new Boolean()
+Use [] instead of new Array()
+Use /()/ instead of new RegExp()
+Use function (){} instead of new function()
+
+1)If a function is called with a missing argument, the value of the missing argument is set to undefined.
+2)Undefined values can break your code. It is a good habit to assign default values to arguments.
+3)It is a common mistake to forget that switch statements use strict comparison
+4)"+" is appending operator so check the type when you have to perform addition
+5)Subtracting a string from a string, does not generate an error but returns NaN (Not a Number):
+6)closing (ending) statements with semicolon is optional in JavaScript. Never break a return statement.
+7)You must use a "backslash" if you must break a statement in a string:
+8)In JavaScript, arrays use numbered indexes and objects use named indexes. If you use a named index, when accessing an array, JavaScript will redefine the array to a standard object.
+After the automatic redefinition, array methods and properties will produce undefined or incorrect results
+9) Ending an Array Definition with a Comma and Object Definition with Comma is Incorrect
+	eg:points = [40, 100, 1, 5, 25, 10,]; and person = {firstName:"John", lastName:"Doe", age:46,} is incorrect
+10) With JavaScript, null is for objects, undefined is for variables, properties, and methods.
+11) If you want to test if an object exists, this will throw an error if the object is undefined
+	eg: correct way : if (typeof myObj !== "undefined" && myObj !== null)
+12) JavaScript does not create a new scope for each code block.
+
+Prototype - it is like php class
+All JavaScript objects inherit the properties and methods from their prototype.
+Objects created using an object literal, or with new Object(), inherit from a prototype called Object.prototype.
+
+Creating a Prototype
+The standard way to create an object prototype is to use an object constructor function:
+Example
+function person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+ Use new keyword to create new objects from the same prototype:
+var myFather = new person("John", "Doe", 50, "blue");
+Refer : http://www.w3schools.com/js/js_object_prototypes.asp
+
+The JavaScript prototype property allows you to add new properties to an existing prototype:
+person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+= operator has right associativity
+it is dynamically typed lang
+Coercion - means attempt to convert it
+
+|| always return the truthful value not just boolean
+
+JSON {'greetings':'hello'}
+Javascript object {greetings:'hello'}
+
+Converting Json to javascript object - JSON.parse('{'greetings':'hello'}')
+Converting Javascript object to json - JSON.stringify('{greetings:'hello'}');
+
+Functions can be passed around like variables , functions in javascript are objects.
+
+Passed by reference and value
+Primitive values(integers, strings) are copied to the next varibale in memory and passed by value
+Objects when asigned to new variable it points to same address it is not copied to another location in memory. this is called by reference
+All objects in javascript are passed by reference
+
+Mutate - to change something
+immutable -cannot br mutated
+
+
+
+
+
+
+

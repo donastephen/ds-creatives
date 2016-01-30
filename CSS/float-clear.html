@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.div1{
+	margin: 10px;
+	border: 3px solid black;
+	background-color: red;
+	width: 100px;
+    height: 50px;
+	float:left;
+}
+.div2{
+	border: 1px solid green;
+	width: 600px;
+    height: 66px;
+    padding: 5px;
+}
+.my_h2{
+	clear:left;
+}
+.div3{
+	margin:10px;
+	border: 3px solid black;
+	background-color: blue;
+	width: 100px;
+    height: 50px;
+	float:left;
+}
+.div4{
+	border: 1px solid green;
+	clear:left;
+	width: 600px;
+    height: 50px;
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+	<h2>Without clear</h2>
+	<div class="div1">Div1</div>
+	<div class="div2">div2 - Notice that the div2 element is after div1, in the HTML code. However, since div1 is floated to the left, this happens: the text in div2 is floated around div1, and div2 surrounds the whole thing.</div>
+	<h2 class='my_h2'>With clear</h2>
+	<div class="div3">Div 3</div>
+	<div class="div4">div4 - Using clear moves div4 down below the floated div3. The value "left" clears elements floated to the left. You can also clear "right" and "both"</div>
+</body>
+</html>

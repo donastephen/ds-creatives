@@ -1,3 +1,7 @@
+
+Class is a code template used to generate objects.
+
+
 1) Creating copy of object using clone
 2) Class constants, which can be accessed using :: from other classes
 3) Static methods and variables,  can be accessed from other classes using ::
@@ -9,7 +13,7 @@
    All methods which are defined in an interface must be public and must be implemented
    In a class you can implement any number of interfaces.
 8) Magic Methods - methods starting with __ and those are defined to provide additional functionality to classes.
-   eg: __set,__get,__toString, __call
+   eg: __set,__get,__toString, __call. The first four methods in our list, __get, __set, __isset, and __unset are used for property overloading of an object.They let us define how the outside world is able to interact with properties that have a private or protected visibility, and properties that don’t even exist in our object.
 9) Finality - final methods cannot be implemented again and final classes to prevent it from having a children (you cannot extend it)
 
 10) __autoload - helps in avoiding includes in the top of files and loads the file when PHP encounters undefined yet class
@@ -18,12 +22,56 @@
 12) Exceptions - The exceptions are basically just objects. When an error occurs you can use an exception in its place. This way, when an exception is used, the rest of the following PHP code will not be executed
 
 __call - gets called when invoking inaccessible methods in object context . Like accessing a method which is not even defined
-        eg: __call($name, $arguments)  , $name - nam eof method and argument- argument the method is called with
+  eg: __call($name, $arguments)  , $name - nam eof method and argument- argument the method is called with
 __callStatic - gets called when invoking an inaccessible static method in
 
 
 WEB SERVICE
-Web services are way to access some data from server system by client system . They are machine independent, language independent.
+Web services are way to access some data from server system by client system.They are machine and language independent.
 For SOAP client requires WSDL from server or UDDI(Universal  Description discovery and Integration) to access the function
 In case of REST client and server can communicate with URI
 Both use HTTP as a medium of communication. REST uses HTTP methods GET,POST,PUT and DELETE.
+If you do not know the actual resource location, for instance, when you add a new article, but do not have any idea where to store it, you can POST it to an URL, and let the server decide the actual URL. 
+As soon as you know the new resource location, you can use PUT again to do updates to the blue stapler article. But as said before: you CAN add new resources through PUT as well.
+PUT and POST are both unsafe methods. However, PUT is idempotent, while POST is not. 
+
+Idempotence
+
+From a RESTful service standpoint, for an operation (or service call) to be idempotent, clients can make that same call repeatedly while producing the same result. In other words, making multiple identical requests has the same effect as making a single request. Note that while idempotent operations produce the same result on the server (no side effects), the response itself may not be the same (e.g. a resource's state may change between requests).
+
+The PUT and DELETE methods are defined to be idempotent. However, there is a caveat on DELETE. The problem with DELETE, which if successful would normally return a 200 (OK) or 204 (No Content), will often return a 404 (Not Found) on subsequent calls, unless the service is configured to "mark" resources for deletion without actually deleting them. However, when the service actually deletes the resource, the next call will not find the resource to delete it and return a 404. However, the state on the server is the same after each DELETE call, but the response is different.
+
+GET, HEAD, OPTIONS and TRACE methods are defined as safe, meaning they are only intended for retrieving data. This makes them idempotent as well since multiple, identical requests will behave the same.
+- helps in avoiding unnecessary dependencies in application
+
+Namespace
+a namespace defines a scope in a program where class, interface, function, variable, and constant definitions won’t produce name collisions with similarly named items in other namespaces.
+
+Caching
+Varnish - caching pages . iIts sits in the front of web server and serves the cached page else goes to the host and port provided and gets the page from server
+APC Cache - Cahes php byte codes . used if the php script has more load time .In Php5.5 it is gone for Opcache
+Memchahe - used to cache db objects 
+
+
+“Late binding” comes from the fact that static:: will not be resolved using the class where the method is defined but will rather be determined using runtime information and scope
+function makeSounds() {
+        echo self::makeSound() . ', '; - defined class 
+        echo static::makeSound() . PHP_EOL; - called class
+    }
+
+Triats
+Traits are an excellent addition to PHP 5.4 that allow behaviors to be added to a class, without needing to extend a parent class to inherit the desired functionality. Additionally, you can make use of multiple Traits in a single class. 
+trait Speak {
+    public function makeSound(){
+        echo $this->sound . PHP_EOL; 
+    }
+}
+
+class another{
+	use Speak;
+}
+
+php://input
+The $_POST superglobal is the formatted or parsed content of the body of a request made to the server with the post method.
+The body of the request can be accessed through the PHP’s input stream the same as any other file:
+$input = file_get_contents("php://input"); 

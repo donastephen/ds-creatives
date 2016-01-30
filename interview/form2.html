@@ -1,0 +1,67 @@
+<!Doctype>
+<html>
+<head>
+<style>
+.main{
+	background-color:yellow;
+	width:600px;
+	height:400px;
+	border: 20px solid grey;
+	margin: 4px;
+	padding: 10px;
+	font-family: Arial;
+}
+label{
+	width:300px;
+}
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+$(document).ready(
+	function(){
+		$('#my-form').submit( function (event){
+			/*$('#my-form').serialize(); */
+
+			$.ajax({
+				type: "POST",
+				  url: "form2_processing.php",
+				  data: {name: 'dona'},
+				  dataType: "json"
+			})
+			.done(function(data){
+				alert('hi');
+				console.log(data);
+			});
+
+			return false;
+
+		});
+		$('#clear-fields').on('click',function(){
+			console.log('inside clear');
+			$('#my-form')[0].reset();
+		});
+
+
+	}
+);
+
+</script>
+</head>
+<body>
+<div class="main">
+	<form id="my-form">
+	<p>
+		<label>Name:</label><input type="text" id="name" placeholder="Enter name here" />
+		</p>
+		<p>
+		<label>Password:</label><input type="text" id="password" placeholder="Enter Passsword here"/>
+		</p>
+		<p>
+		<input type="submit" name="submit"/>
+		<input type="button" value="clear"  id="clear-fields"/>
+		</p>
+	</form>
+</div>
+</body>
+</html>

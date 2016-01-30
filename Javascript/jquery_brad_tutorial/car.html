@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>jQuery Car Race 2.0</title>
+
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/styles.css"/>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js"></script>
+	</head>
+
+	<body id="race">
+		<h1>jQuery Car Race 2.0</h1>
+
+		<input type="button" value="Race!" id="go"/>
+		<input type="button" value="Reset" id="reset"/>
+
+		<div id="racetrack">
+			<img src="img/car1.png" alt="Green Car" id="car1" class="car">
+			<img src="img/car2.png" alt="Blue Car" id="car2" class="car">
+		</div>
+
+		<div id="raceInfoContainer" class="clerfix">
+			<h2>Results</h2>
+			<div id="raceinfo1" class="raceinfo">Car 1 <span></span></div>
+			<div id="raceinfo2" class="raceinfo">Car 2 <span></span></div>
+		</div>
+	</body>
+</html>	

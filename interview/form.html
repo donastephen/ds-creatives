@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+<style>
+.outer-div{
+	width:600px;
+	background-color: lightgrey ;
+	margin: 10px;
+}
+h1{
+	padding-top:3px;
+	font-family: "Arial Verdana";
+	font-size:20px;
+	text-align: center;
+}
+.underline{
+	border:1px solid black;
+}
+.my-form{
+
+}
+label{
+	padding:3px;
+	width:250px;
+	display:inline;
+	float:left;
+}
+input{
+	width: 200px;
+	height: 20px;
+
+}
+input[type="submit"]{
+	height: 35px;
+	width:100px;
+	background-color: white;
+}
+.btn1{
+	margin-left: 300px;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="outer-div">
+	<h1> User Details Form</h1>
+	<p class="underline"></p>
+	<form class="my-form" >
+	<p><label for="first_name">First Name</label>	: <input type="text" placeholder="Enter your First Name" name="first_name" /> </p>
+	<p><label for="last_name">Last Name</label>	: <input type="text" placeholder="Enter your Last Name" name="last_name" /> </p>
+	<p><label for="dob">Date of Birth</label>	: <input type="text" placeholder="Enter your Date of Birth" name="dob" /> </p>
+	<p class="submit"> 
+        <input type="submit" class="btn1" value="Register" /> 
+        <input type="submit" class="btn2" value="Clear" /> 
+    </p> 
+	</form>
+<div>
+</body>
+<html>

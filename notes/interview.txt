@@ -1,0 +1,44 @@
+
+1)REST PUT vs POST
+	whenever we are not sure of the unique resource id to update always use POST
+2)writing php two servers sharing session
+	either using load balancer or database based session.
+3) How to avoid cross site scripting
+	Cross-Site Scripting (abbreviated as XSS) is a class of security vulnerability whereby an attacker manages to use a website to deliver a potentially malicious JavaScript payload to an end user.
+	Always filter and ouput that was based on a user input
+	PHP has some "filter" functions that can be used.
+	If you are using a templating engine (e.g. Twig, Smarty, Blade), check that it offers context-sensitive escaping. I know from experience that Twig does. {{ var|e('html_attr') }}
+	 htmlentities($var, ENT_QUOTES | ENT_HTML5, $charset) and make sure the rest of your document uses the same character set as $charset	
+4) how to start a cron job after finishing one
+	Cron is the name of program that enables unix users to execute commands or scripts (groups of commands) automatically at a specified time/date. Cron is a daemon, which means that it only needs to be started once, and will 
+lay dormant until it is required.
+	One option is to poll every x minutes using pgrep and check if the process finished. If it did, start the other one. However, I don't like this solution.
+		pid=$(ps -opid= -C your_script_name)
+		while [ -d /proc/$pid ] ; do
+    	sleep 1
+		done && ./your_other_script
+	You can use a lock file. Create this file when the script starts and delete it when it finishes. The script, before it runs its main routine, should check if the lock file exists and proceed accordingly.
+
+	Lockfiles are used by initscripts and by many other applications and utilities in Unix systems.
+5) select firstname,lastname from user left join city on city.city_id=user.city_id and city.county='Santa Clara'
+6) mysql injection
+Never connect to the database as a superuser or as the database owner. Use always customized users with very limited privileges.
+Use prepared statements with bound variables. They are provided by PDO, by MySQLi and by other libraries.
+Check if the given input has the expected data type. PHP has a wide range of input validating functions,  (e.g. is_numeric(), ctype_digit() respectively
+If the application waits for numerical input, consider verifying data with ctype_digit(), or silently change its type using settype(), or use its numeric representation by sprintf().
+7) how to use profiler in php
+	PECL APD extension - it is broken in php5.4
+	NewRelic for profiling is the best.
+	Xdebug
+
+8) how to validate an xml file
+	<?php
+	$xml = XMLReader::open('test.xml');
+
+	// The validate parser option must be enabled for 
+	// this method to work properly
+	$xml->setParserProperty(XMLReader::VALIDATE, true);
+
+	var_dump($xml->isValid());
+	?>
+
